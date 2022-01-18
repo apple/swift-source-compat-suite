@@ -292,7 +292,7 @@ def build_swift_package(path, swiftc, swift_version, configuration,
     env = os.environ
     env['DYLD_LIBRARY_PATH'] = get_stdlib_platform_path(swiftc, 'macOS')
     env['SWIFT_EXEC'] = swiftc
-    command = [swift, 'build', '-C', path, '--verbose',
+    command = [swift, 'build', '-C', path, '--verbose', '--build-tests',
                '--configuration', configuration]
     if (swift_branch not in ['swift-3.0-branch',
                              'swift-3.1-branch']):
